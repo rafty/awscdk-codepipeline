@@ -1,7 +1,7 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from awscdk_codepipeline.awscdk_codepipeline_stack import AwscdkCodepipelineStack
+from stacks.awscdk_codepipeline_stack import AwscdkCodepipelineStack
 
 # example tests. To run these tests, uncomment this file along with the example
 # resource in awscdk_codepipeline/awscdk_codepipeline_stack.py

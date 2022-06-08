@@ -27,6 +27,9 @@
     "@aws-cdk/core:target-partitions": [
       "aws",
       "aws-cn"
-    ]
+    ],
+    "github_repository_name": "rafty/sample_flask_frontend_app",
+    "ecr_repository_name": "sample_flask_frontend_app",
+    "pipeline_name": "sample_codepipeline"
   }
 }
