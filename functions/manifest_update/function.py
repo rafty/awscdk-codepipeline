@@ -5,7 +5,6 @@ import boto3
 from aws_lambda_powertools import Logger
 from dulwich import porcelain
 
-
 logger = Logger()
 code_pipeline_client = boto3.client('codepipeline')
 secrets_manager_client = boto3.client('secretsmanager')
