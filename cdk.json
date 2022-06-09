@@ -28,8 +28,10 @@
       "aws",
       "aws-cn"
     ],
-    "github_repository_name": "rafty/sample_flask_frontend_app",
-    "ecr_repository_name": "sample_flask_frontend_app",
-    "pipeline_name": "sample_codepipeline"
+    "pipeline_name": "sample_codepipeline",
+    "github_token_name": "GithubPersonalAccessToken",
+    "github_source_repository": "https://github.com/rafty/sample_flask_frontend_app",
+    "github_target_repository": "https://github.com/rafty/eks-gitops-app-manifest",
+    "ecr_repository_name": "sample_flask_frontend_app"
   }
 }

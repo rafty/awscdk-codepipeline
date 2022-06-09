@@ -53,4 +53,12 @@ class BuildStage(Construct):
             outputs=[self.build_output],
             variables_namespace='ContainerImage'  # BuildEnvironmentVariable
         )
+        # -----------------------------------------------------------------
+        # BuildEnvironmentVariable
+        #   buildspecの中で出力した変数を環境変数として出力し、後段のStageに値を渡す。
+        #   namespace: ContainerImage
+        #   variable: VAR_CONTAINER_IMAGE_NAME
+        #   variable: VAR_CONTAINER_IMAGE_TAG
+        # -----------------------------------------------------------------
+
         return build_action

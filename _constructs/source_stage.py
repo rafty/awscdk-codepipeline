@@ -18,8 +18,9 @@ class SourceStage(Construct):
         owner = 'rafty'
         repo = 'sample_flask_frontend_app'
         # todo: cdk.jsonから取得する
-        branch = 'master'
-        oauth_token = aws_cdk.SecretValue.secrets_manager('GithubPersonalAccessToken')
+        # branch = 'master'
+        asm_secret_name = self.node.try_get_context('github_token_name')
+        oauth_token = aws_cdk.SecretValue.secrets_manager(asm_secret_name)
 
         source_action = aws_codepipeline_actions.GitHubSourceAction(
             action_name='github-source-action',

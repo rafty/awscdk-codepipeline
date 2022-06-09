@@ -58,10 +58,8 @@ class CodepipelineStack(Stack):
             actions=[build_action]
         )
 
-        # Stage - Deployment Manifest Tag Update (GitHub)
+        # Stage - Manifest Tag Update (GitHub)
         info = {
-            'pipeline_name': pipeline_name,
-            'ecr_repository_name': ecr_repository_name,
             'container_image_name': aws_codebuild.BuildEnvironmentVariable(
                 value=build_action.variable('VAR_CONTAINER_IMAGE_NAME')),
             'container_image_tag': aws_codebuild.BuildEnvironmentVariable(
