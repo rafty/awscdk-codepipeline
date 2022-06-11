@@ -6,6 +6,7 @@ from aws_cdk import aws_codebuild
 from _constructs.source_stage import SourceStage
 from _constructs.build_stage import BuildStage
 from _constructs.tag_update_stage import TagUpdateStage
+from _constructs.test_stage import TestStage
 
 
 class CodepipelineStack(Stack):
@@ -44,6 +45,18 @@ class CodepipelineStack(Stack):
         codepipeline.add_stage(
             stage_name='Source',
             actions=[source_action]
+        )
+
+        # Stage - Unit Test
+        test_stage = TestStage(
+            self,
+            'TestStage',
+            source_output=source_stage.source_output,
+            env=env)
+        test_action = test_stage.creation()
+        codepipeline.add_stage(
+            stage_name='Test',
+            actions=[test_action]
         )
 
         # Stage - Build
